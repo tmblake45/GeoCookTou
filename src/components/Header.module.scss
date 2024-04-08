@@ -1,0 +1,136 @@
+@use "../assets/styles/mixin" as mixin;
+
+.header {
+  padding: 10px 25px;
+  background-color: white;
+  box-shadow: var(--box-shadow-nav);
+  color: var(--primary-1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .logoSection {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 50px;
+      height: 45px;
+    }
+
+    span {
+      font-size: 1.5rem;
+      line-height: 60px;
+      margin-left: 10px;
+    }
+  }
+
+  .searchBox {
+    background: var(--primary);
+    height: 60px;
+    border-radius: 30px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: width 0.4s;
+
+    &:hover {
+      .searchInput {
+        width: 700px;
+        padding: 0 6px;
+      }
+
+      .searchButton {
+        background: white;
+        color: #63ade2;
+      }
+    }
+  }
+  .searchButton,
+  .searchInput {
+    height: 100%;
+  }
+
+  .searchButton {
+    color: wheat;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #63ade2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.4s;
+  }
+  .icon {
+    font-size: 30px;
+    width: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 16px;
+    transition: width 0.4s;
+    line-height: 40px;
+    width: 0;
+    padding: 0;
+  }
+  .navigation {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+
+    button {
+      height: 60px;
+      padding: 0 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .fa-user {
+        margin-right: 5px;
+      }
+    }
+  }
+  @media screen and (max-width: 620px) {
+    .searchBox:hover {
+      .searchInput {
+        width: 150px;
+      }
+    }
+  }
+}
+.headerList {
+  @include mixin.xs {
+    display: none;
+  }
+}
+.header.xs {
+  display: none;
+  @include mixin.xs {
+    cursor: pointer;
+    transition: opacity 0;
+    &:hover {
+      opacity: 0.8;
+    }
+    display: block;
+  }
+}
+
+.menu-links {
+  display: flex;
+}
+// .header {
+//   padding: 15px 25px;
+//   background-color: white;
+//   box-shadow: var(--box-shadow-nav);
+//   color: var(--primary-1);
+//   img {
+//     width: 50px;
+//   }
+// }
