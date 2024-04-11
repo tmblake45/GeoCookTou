@@ -1,4 +1,4 @@
-@use "../assets/styles/mixin" as mixin;
+@use "../../assets/styles/mixin" as mixin;
 
 .grid {
   display: grid;
@@ -11,6 +11,10 @@
     grid-auto-columns: repeat(2, 350px);
   }
   @include mixin.md-lt {
+    grid-template-columns: repeat(2, 350px);
+    grid-auto-columns: repeat(2, 350px);
+  }
+  @include mixin.sm-lt {
     grid-template-columns: repeat(2, 250px);
     grid-auto-columns: repeat(2, 250px);
   }
@@ -23,4 +27,19 @@
 .contentCard {
   max-width: 1130px;
   width: 100%;
+}
+
+.searchBar {
+  padding: 10px 15px;
+  border: 2px solid var(--gray2);
+  border-radius: 20px;
+  input {
+    outline: 0;
+    border: 0;
+  }
+}
+
+.small {
+  font-size: 12px;
+  font-weight: 500;
 }

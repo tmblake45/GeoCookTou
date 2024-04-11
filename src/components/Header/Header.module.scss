@@ -1,4 +1,4 @@
-@use "../assets/styles/mixin" as mixin;
+@use "../../assets/styles/mixin" as mixin;
 
 .header {
   position: relative;
@@ -8,10 +8,10 @@
   box-shadow: var(--box-shadow-nav);
   color: var(--primary);
   img {
-    width: 50px;
+    width: 60px;
+    cursor: pointer;
   }
 }
-
 .headerList {
   @include mixin.xs {
     display: none;
@@ -27,59 +27,6 @@
   }
   @include mixin.xs {
     display: block !important;
-  }
-}
-.searchBox {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: var(--primary);
-  height: 40px;
-  border-radius: 40px;
-  padding: 10px;
-
-  &:hover > .searchInput {
-    width: 240px;
-    padding: 0 6px;
-  }
-
-  &:hover > .searchButton {
-    background: white;
-    color: var(--primary);
-  }
-}
-
-.searchButton {
-  color: white;
-  float: right;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: var(--primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.searchInput {
-  border: none;
-  background: none;
-  outline: none;
-  float: left;
-  padding: 0;
-  color: white;
-  font-size: 16px;
-  transition: 0.4s;
-  line-height: 40px;
-  width: 0px;
-}
-
-@media screen and (max-width: 620px) {
-  .searchBox:hover > .searchInput {
-    width: 150px;
-    padding: 0 6px;
   }
 }
 

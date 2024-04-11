@@ -2,7 +2,7 @@
   position: absolute;
   top: 68px;
   right: 10px;
-  width: 200px;
+  width: 300px;
   li {
     padding: 10px 15px;
     cursor: pointer;
@@ -10,7 +10,7 @@
     transition: background-color 0.2s, color 0.2s;
     &:hover {
       background-color: var(--primary);
-      color: white;
+      color: var(--primary);
     }
   }
 }

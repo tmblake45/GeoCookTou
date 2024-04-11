@@ -7,7 +7,7 @@ function Footer() {
       <div>
         <p>Copyright © 2024 3W Schools, Inc.</p>
       </div>
-      <div className="d-flex">
+      <div className="d-flex flex-row align-items-center justify-content-center">
         <div>
           <button className="btn btn-primary">
             <i className="fa-brands fa-x-twitter"></i>
