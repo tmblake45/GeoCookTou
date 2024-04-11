@@ -1,136 +1,224 @@
 @use "../assets/styles/mixin" as mixin;
 
 .header {
-  padding: 10px 25px;
+  position: relative;
+  padding: 10px 20px;
+  height: 58px;
   background-color: white;
   box-shadow: var(--box-shadow-nav);
-  color: var(--primary-1);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-
-  .logoSection {
-    display: flex;
-    align-items: center;
-
-    .logo {
-      width: 50px;
-      height: 45px;
-    }
-
-    span {
-      font-size: 1.5rem;
-      line-height: 60px;
-      margin-left: 10px;
-    }
-  }
-
-  .searchBox {
-    background: var(--primary);
-    height: 60px;
-    border-radius: 30px;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    transition: width 0.4s;
-
-    &:hover {
-      .searchInput {
-        width: 700px;
-        padding: 0 6px;
-      }
-
-      .searchButton {
-        background: white;
-        color: #63ade2;
-      }
-    }
-  }
-  .searchButton,
-  .searchInput {
-    height: 100%;
-  }
-
-  .searchButton {
-    color: wheat;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #63ade2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: background-color 0.4s;
-  }
-  .icon {
-    font-size: 30px;
-    width: 60px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .searchInput {
-    border: none;
-    background: none;
-    outline: none;
-    color: white;
-    font-size: 16px;
-    transition: width 0.4s;
-    line-height: 40px;
-    width: 0;
-    padding: 0;
-  }
-  .navigation {
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-
-    button {
-      height: 60px;
-      padding: 0 15px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .fa-user {
-        margin-right: 5px;
-      }
-    }
-  }
-  @media screen and (max-width: 620px) {
-    .searchBox:hover {
-      .searchInput {
-        width: 150px;
-      }
-    }
+  color: var(--primary);
+  img {
+    width: 50px;
   }
 }
+
 .headerList {
   @include mixin.xs {
     display: none;
   }
 }
-.header.xs {
-  display: none;
+
+.headerXs {
+  display: none !important;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.8;
+  }
   @include mixin.xs {
-    cursor: pointer;
-    transition: opacity 0;
-    &:hover {
-      opacity: 0.8;
-    }
-    display: block;
+    display: block !important;
+  }
+}
+.searchBox {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: var(--primary);
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+
+  &:hover > .searchInput {
+    width: 240px;
+    padding: 0 6px;
+  }
+
+  &:hover > .searchButton {
+    background: white;
+    color: var(--primary);
   }
 }
 
-.menu-links {
+.searchButton {
+  color: white;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--primary);
   display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
 }
+
+.searchInput {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+
+@media screen and (max-width: 620px) {
+  .searchBox:hover > .searchInput {
+    width: 150px;
+    padding: 0 6px;
+  }
+}
+
+// @use "../assets/styles/mixin" as mixin;
+
 // .header {
-//   padding: 15px 25px;
+//   padding: 10px 25px;
 //   background-color: white;
 //   box-shadow: var(--box-shadow-nav);
 //   color: var(--primary-1);
-//   img {
-//     width: 50px;
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+
+//   .logoSection {
+//     display: flex;
+//     align-items: center;
+
+//     .logo {
+//       width: 50px;
+//       height: 45px;
+//     }
+
+//     span {
+//       font-size: 1.5rem;
+//       line-height: 60px;
+//       margin-left: 10px;
+//     }
+//   }
+
+// .searchBox {
+//   background: var(--primary);
+//   height: 60px;
+//   border-radius: 30px;
+//   padding: 10px;
+//   display: flex;
+//   align-items: center;
+//   transition: width 0.4s;
+
+//   &:hover {
+//     .searchInput {
+//       width: 700px;
+//       padding: 0 6px;
+//     }
+
+//       .searchButton {
+//         background: white;
+//         color: #63ade2;
+//       }
+//     }
+//   }
+//   .searchButton,
+//   .searchInput {
+//     height: 100%;
+//   }
+
+//   .searchButton {
+//     color: wheat;
+//     width: 40px;
+//     height: 40px;
+//     border-radius: 50%;
+//     background: #63ade2;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     transition: background-color 0.4s;
+//   }
+//   .icon {
+//     font-size: 30px;
+//     width: 60px;
+//     height: 40px;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//   }
+//   .searchInput {
+//     border: none;
+//     background: none;
+//     outline: none;
+//     color: white;
+//     font-size: 16px;
+//     transition: width 0.4s;
+//     line-height: 40px;
+//     width: 0;
+//     padding: 0;
+//   }
+//   .navigation {
+//     display: flex;
+//     align-items: center;
+//     margin-left: 10px;
+
+//     button {
+//       height: 60px;
+//       padding: 0 15px;
+//       display: flex;
+//       align-items: center;
+//       justify-content: center;
+//       .fa-user {
+//         margin-right: 5px;
+//       }
+//     }
+//   }
+//   @media screen and (max-width: 620px) {
+//     .searchBox:hover {
+//       .searchInput {
+//         width: 150px;
+//       }
+//     }
 //   }
 // }
+// .headerList {
+//   @include mixin.xs {
+//     display: none;
+//   }
+//   .li {
+//     margin-right: 15px;
+//   }
+//   .header.xs {
+//     display: none;
+//     @include mixin.xs {
+//       cursor: pointer;
+//       transition: opacity 0;
+//       &:hover {
+//         opacity: 0.8;
+//       }
+//       display: block;
+//     }
+//   }
+
+//   .menu-links {
+//     display: flex;
+//   }
+// }
+// // .header {
+// //   padding: 15px 25px;
+// //   background-color: white;
+// //   box-shadow: var(--box-shadow-nav);
+// //   color: var(--primary-1);
+// //   img {
+// //     width: 50px;
+// //   }
+// // }
